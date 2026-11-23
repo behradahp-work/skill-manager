@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 
 //---------- Components ----------
 import AppSidebar from "@/app/layout/app-sidebar";
+import WorkspaceContent from "@/features/topics/components/workspace-content";
 import { SidebarInset } from "@/shared/components/ui/sidebar/sidebar-inset";
 import { SidebarProvider } from "@/shared/components/ui/sidebar/sidebar-provider";
 import { SidebarTrigger } from "@/shared/components/ui/sidebar/sidebar-trigger";
@@ -31,7 +32,9 @@ export default function AppLayout() {
             tabIndex={-1}
             className="mx-auto w-full max-w-6xl px-5 pt-8 pb-[max(2rem,env(safe-area-inset-bottom))] outline-none sm:px-8 md:px-10 md:py-10 lg:px-14"
           >
-            <Outlet />
+            <WorkspaceContent>
+              <Outlet />
+            </WorkspaceContent>
           </div>
         </SidebarInset>
       </SidebarProvider>
