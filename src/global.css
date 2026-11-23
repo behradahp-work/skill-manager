@@ -1,6 +1,9 @@
+/*---------- Packages ----------*/
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
+/*---------- Fonts ----------*/
 @import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
@@ -49,20 +52,20 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
+    --background: oklch(0.978 0.008 105);
+    --foreground: oklch(0.24 0.03 157);
 
-    --primary: oklch(0.205 0 0);
+    --primary: oklch(0.37 0.075 157);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.95 0.013 119);
+    --muted-foreground: oklch(0.46 0.024 150);
+    --accent: oklch(0.925 0.035 151);
+    --accent-foreground: oklch(0.34 0.071 157);
 
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
+    --border: oklch(0.91 0.016 120);
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
     --radius: 0.45rem;

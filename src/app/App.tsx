@@ -1,3 +1,4 @@
+//---------- Components ----------
 import AppProviders from "./providers/app-providers";
 
 function App() {
