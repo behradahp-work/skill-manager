@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.behradahp.skills",
+      "sha256_cert_fingerprints": [
+        "0B:45:09:23:52:09:03:6A:7A:10:00:49:28:5A:86:A4:8F:B4:C5:81:07:26:3C:0B:9B:25:BD:38:3C:72:2D:45"
+      ]
+    }
+  }
+]
