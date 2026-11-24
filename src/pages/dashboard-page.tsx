@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 //---------- Components ----------
 import DashboardSummary from "@/features/dashboard/components/dashboard-summary";
+import LoadSampleData from "@/features/dashboard/components/load-sample-data";
+import TopicComparison from "@/features/dashboard/components/topic-comparison";
+import RatingDistribution from "@/features/topics/components/rating-distribution";
 import EmptyState from "@/shared/components/shared/empty-state";
 import PageHeading from "@/shared/components/shared/page-heading";
 import { Button } from "@/shared/components/ui/button";
@@ -22,10 +25,10 @@ export default function DashboardPage() {
   return (
     <div className="space-y-7">
       <title>Dashboard | Skill Manager</title>
-      <div className="flex flex-wrap items-start justify-between gap-4">
+      <div className="flex flex-wrap items-start justify-between gap-4 rounded-xl border bg-linear-to-br from-accent/80 via-card to-card p-5 sm:p-8">
         <PageHeading
           title="Dashboard"
-          description="See how many skills you’re tracking and how you’ve rated them."
+          description="See where your skills are strongest and which topics you’ve rated so far."
         />
         {topics.length > 0 && (
           <Button nativeButton={false} render={<Link to="/topics" />} className="h-11 px-4">
@@ -34,20 +37,28 @@ export default function DashboardPage() {
         )}
       </div>
       <DashboardSummary topicCount={topics.length} skillCount={skills.length} averageRating={averageRating} />
-      {topics.length === 0 && <EmptyState
-        icon={FolderOpen}
-        title="Your workspace is empty"
-        description="Your dashboard will show a summary once you have topics and skills."
-        action={
-          <Button
-            nativeButton={false}
-            render={<Link to="/topics" />}
-            className="h-11 px-4"
-          >
-            View topics <ArrowRight aria-hidden="true" />
-          </Button>
-        }
-      />}
+      {skills.length > 0 && <RatingDistribution skills={skills} />}
+      {topics.length > 0 && (
+        <section aria-labelledby="topic-comparison-heading" className="space-y-3">
+          <h2 id="topic-comparison-heading" className="text-xl font-semibold tracking-tight">Compare topics</h2>
+          <TopicComparison topics={topics} />
+        </section>
+      )}
+      {topics.length === 0 && (
+        <EmptyState
+          icon={FolderOpen}
+          title="Your workspace is empty"
+          description="Add your own topics or try the charts with sample data."
+          action={
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button nativeButton={false} render={<Link to="/topics" />} className="h-11 px-4">
+                View topics <ArrowRight aria-hidden="true" />
+              </Button>
+              <LoadSampleData />
+            </div>
+          }
+        />
+      )}
     </div>
   );
 }

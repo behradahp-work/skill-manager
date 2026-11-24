@@ -5,10 +5,10 @@ import type { RouteObject } from "react-router-dom";
 import AppLayout from "@/app/layout/app-layout";
 
 //---------- Pages ----------
-import DashboardPage from "@/features/pages/dashboard-page";
-import NotFoundPage from "@/features/pages/not-found-page";
-import TopicDetailPage from "@/features/pages/topic-detail-page";
-import TopicsPage from "@/features/pages/topics-page";
+import DashboardPage from "@/pages/dashboard-page";
+import NotFoundPage from "@/pages/not-found-page";
+import TopicDetailPage from "@/pages/topic-detail-page";
+import TopicsPage from "@/pages/topics-page";
 
 const routes: RouteObject[] = [
   {

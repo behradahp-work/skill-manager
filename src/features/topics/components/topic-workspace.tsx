@@ -7,6 +7,7 @@ import EmptyState from "@/shared/components/shared/empty-state";
 import PageHeading from "@/shared/components/shared/page-heading";
 import { Button } from "@/shared/components/ui/button";
 import EntryEditorDialog from "./entry-editor-dialog";
+import RatingDistribution from "./rating-distribution";
 import SkillCard from "./skill-card";
 
 //---------- Hooks ----------
@@ -70,6 +71,7 @@ export default function TopicWorkspace({ topic, onDeleted }: { topic: Topic; onD
           </ul>
         )}
       </section>
+      {skillCount > 0 && <RatingDistribution skills={topic.skills} />}
     </div>
   );
 }
