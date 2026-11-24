@@ -21,10 +21,19 @@ export default function TopicDetailPage() {
     return (
       <div className="space-y-5">
         <title>{`${topic.name} | Skill Manager`}</title>
-        <Link to="/topics" className="inline-flex min-h-11 items-center gap-2 rounded-md text-sm font-medium text-primary hover:underline">
+        <Link
+          to="/topics"
+          className="inline-flex min-h-11 items-center gap-2 rounded-md text-sm font-medium text-primary hover:underline"
+        >
           <ArrowLeft className="size-4" aria-hidden="true" /> All topics
         </Link>
-        <TopicWorkspace key={topic.id} topic={topic} onDeleted={() => { void navigate("/topics", { replace: true }); }} />
+        <TopicWorkspace
+          key={topic.id}
+          topic={topic}
+          onDeleted={() => {
+            void navigate("/topics", { replace: true });
+          }}
+        />
       </div>
     );
   }
