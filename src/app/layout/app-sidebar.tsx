@@ -1,5 +1,4 @@
 //---------- Packages ----------
-import { Layers3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 //---------- Components ----------
@@ -23,9 +22,7 @@ export default function AppSidebar() {
           tooltip="Skill Manager"
           render={<Link to="/" onClick={() => setOpenMobile(false)} />}
         >
-          <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <Layers3 aria-hidden="true" />
-          </span>
+          <img src="/icon-192.png" alt="" width={32} height={32} className="size-8 shrink-0 rounded-lg" />
           <span className="font-semibold tracking-tight">Skill Manager</span>
         </SidebarMenuButton>
       </SidebarHeader>
